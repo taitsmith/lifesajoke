@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Life\'s A Joke</string>
-    <string name="hello_world">You paid for this.</string>
+    <string name="app_name">Life\'s a Joke</string>
+    <string name="joke_button_text">Tell me a joke</string>
 </resources>

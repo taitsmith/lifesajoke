@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello_world">You\'re using the free vesrion</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="greeting">This version of Life\'s a Joke is supported by ads.</string>
+    <string name="out_of_jokes">Oh no! You\'re out of joke credits. Use the button to buy credits for
+        more jokes.</string>
 </resources>

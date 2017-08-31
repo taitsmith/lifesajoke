@@ -1,0 +1,187 @@
+{
+  "project_info": {
+    "project_number": "694843818532",
+    "firebase_url": "https://lifesajoke-f21ad.firebaseio.com",
+    "project_id": "lifesajoke-f21ad",
+    "storage_bucket": "lifesajoke-f21ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694843818532:android:bb535d9d8e3fcc49",
+        "android_client_info": {
+          "package_name": "com.taitsmith.lifesajoke.paid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694843818532-iovcgoeasic9ema0pv3vlifinj0f4oor.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taitsmith.lifesajoke.paid",
+            "certificate_hash": "883d5c591a3df390ae5040cf588714b65911dae4"
+          }
+        },
+        {
+          "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVPTfYCd94afR4na42wYJid0olSIYlBE4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694843818532:android:f0e68a70174d983c",
+        "android_client_info": {
+          "package_name": "com.taitsmith.lifesajoke.free"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694843818532-o9lt2decghbsdubdhb8tb1epvcse7qev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taitsmith.lifesajoke.free",
+            "certificate_hash": "883d5c591a3df390ae5040cf588714b65911dae4"
+          }
+        },
+        {
+          "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVPTfYCd94afR4na42wYJid0olSIYlBE4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694843818532:android:795978b28871f19c",
+        "android_client_info": {
+          "package_name": "com.taitsmith.joke.free"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694843818532-tij3rtkd0nl4ilsjgqfgm5stngfu8qf8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taitsmith.joke.free",
+            "certificate_hash": "883d5c591a3df390ae5040cf588714b65911dae4"
+          }
+        },
+        {
+          "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVPTfYCd94afR4na42wYJid0olSIYlBE4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694843818532:android:40347c0a0db497e2",
+        "android_client_info": {
+          "package_name": "com.taitsmith.joke.paid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694843818532-s7op2nvbv3unmfqngnn35kglfe678u21.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taitsmith.joke.paid",
+            "certificate_hash": "883d5c591a3df390ae5040cf588714b65911dae4"
+          }
+        },
+        {
+          "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVPTfYCd94afR4na42wYJid0olSIYlBE4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694843818532-ig5957stlgf5nmusmt0v2fc048uhm68a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

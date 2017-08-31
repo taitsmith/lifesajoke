@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">joketeller</string>
+    <string name="oops">Boy, we really messed something up on this one.</string>
 </resources>
