@@ -21,6 +21,7 @@ android {
     productFlavors {
         free {
             applicationId = "com.taitsmith.lifesajoke.free"
+            apply plugin: 'com.google.gms.google-services'
         }
 
         paid {
@@ -37,16 +38,17 @@ dependencies {
 
     compile project(':jokecreator')
     compile project(':joketeller')
+    compile project(path: ':jokeprovider', configuration: 'android-endpoints')
 
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+
     testCompile 'junit:junit:4.12'
+
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     freeCompile 'com.google.firebase:firebase-ads:10.0.1'
-
 }
 
-
-apply plugin: 'com.google.gms.google-services'
