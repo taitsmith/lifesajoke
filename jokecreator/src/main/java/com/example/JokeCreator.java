@@ -3,7 +3,7 @@ package com.example;
 import java.util.Random;
 
 public class JokeCreator {
-    public String[] jokes = new String[] {
+    private String[] jokes = new String[] {
             "haha beep beep",
             "oh no",
             "Open a law firm that represents the animals from Seaworld and call it Habeas Porpoise",
@@ -16,7 +16,7 @@ public class JokeCreator {
 
     public String getJoke() {
         Random r = new Random();
-        int i = r.nextInt(8);
+        int i = r.nextInt(jokes.length);
         return jokes[i];
     }
 }

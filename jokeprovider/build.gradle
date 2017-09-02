@@ -26,11 +26,11 @@ dependencies {
     compile 'com.google.appengine:appengine-endpoints:1.9.42'
     compile 'com.google.appengine:appengine-endpoints-deps:1.9.42'
     compile 'javax.servlet:servlet-api:2.5'
-    compile project(':jokecreator')
 }
 
 appengine {
     downloadSdk = true
+    httpAddress = "0.0.0.0"
     appcfg {
         oauth2 = true
     }

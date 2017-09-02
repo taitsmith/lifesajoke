@@ -1,16 +1,18 @@
 package com.taitsmith.lifesajoke.free;
 
-import android.content.Intent;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.JokeCreator;
-import com.taitsmith.joketeller.JokeTeller;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.taitsmith.lifesajoke.EndpointsJokeRetriever;
 import com.taitsmith.lifesajoke.R;
 
 import butterknife.BindView;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button jokeButton;
     @BindView(R.id.buyJokesButton)
     Button buyJokesButton;
+    @BindView(R.id.adView)
+    AdView adView;
 
     public JokeCreator creator;
     public SharedPreferences preferences;
@@ -36,19 +40,24 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         creator = new JokeCreator();
         preferences = getSharedPreferences("SHARED_PREFS", 0);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
 
+    //there's no real point to the joke credits thing.
+    //it's also a joke.
+    @SuppressWarnings("unchecked")
     @OnClick(R.id.jokeButton)
     public void tellJoke() {
         if (getJokeCount() > 0) {
-            Intent intent = new Intent(this, JokeTeller.class);
-            intent.putExtra("JOKE", creator.getJoke());
-            startActivity(intent);
+            new EndpointsJokeRetriever().execute(new Pair<Context, String>(this, creator.getJoke()));
         } else {
             showOutOfJokes(true);
         }
     }
 
+    //pretend that you've a limited number of joke credits.
     int getJokeCount() {
         int jokesRemaining;
         editor = preferences.edit();
@@ -59,10 +68,9 @@ public class MainActivity extends AppCompatActivity {
             jokesRemaining = 6;
         }
 
-        editor.putInt("JOKES_REMAINING", jokesRemaining -1);
+        editor.putInt("JOKES_REMAINING", jokesRemaining - 1);
         editor.apply();
 
-        Log.d("JOKES REMAINING", Integer.toString(jokesRemaining));
         return jokesRemaining;
     }
 

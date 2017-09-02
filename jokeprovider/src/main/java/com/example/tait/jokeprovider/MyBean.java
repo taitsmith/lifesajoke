@@ -6,13 +6,13 @@ package com.example.tait.jokeprovider;
  */
 public class MyBean {
 
-    private String myJokes;
+    private String myJoke;
 
     public String getData() {
-        return myJokes;
+        return myJoke;
     }
 
-    public void setData(String jokes) {
-        myJokes = jokes;
+    public void setData(String joke) {
+        myJoke = joke;
     }
 }
