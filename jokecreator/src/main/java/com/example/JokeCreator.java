@@ -7,11 +7,10 @@ public class JokeCreator {
             "haha beep beep",
             "oh no",
             "Open a law firm that represents the animals from Seaworld and call it Habeas Porpoise",
-            "Oof owie my bones",
+            "Great mimes think alike",
             "I dated a blind woman but we broke up because she didn\'t understand observational humor",
-            "There are crab cake but why are there no crab cupcakes?",
-            "If I\'m 5\'6\" do you think I can still be a short order cook?",
-            "Try again later"
+            "There are crab cakes but why are there no crab cupcakes?",
+            "If I\'m 5\'6\" do you think I can still be a short order cook?"
     };
 
     public String getJoke() {

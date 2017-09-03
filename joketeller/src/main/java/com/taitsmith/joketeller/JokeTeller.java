@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+
 public class JokeTeller extends AppCompatActivity {
     TextView jokeView;
     String joke;
@@ -20,5 +21,6 @@ public class JokeTeller extends AppCompatActivity {
         } else {
             jokeView.setText(getString(R.string.oops));
         }
+
     }
 }

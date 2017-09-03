@@ -7,6 +7,7 @@ import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.JokeCreator;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     Button buyJokesButton;
     @BindView(R.id.adView)
     AdView adView;
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
 
     public JokeCreator creator;
     public SharedPreferences preferences;
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.jokeButton)
     public void tellJoke() {
         if (getJokeCount() > 0) {
+            showLoading(true);
             new EndpointsJokeRetriever().execute(new Pair<Context, String>(this, creator.getJoke()));
         } else {
             showOutOfJokes(true);
@@ -92,5 +96,19 @@ public class MainActivity extends AppCompatActivity {
         editor = preferences.edit();
         editor.putInt("JOKES_REMAINING", 5);
         editor.apply();
+    }
+
+    public void showLoading(boolean show) {
+        if (show) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        showLoading(false);
     }
 }
