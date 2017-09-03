@@ -3,7 +3,10 @@ package com.taitsmith.lifesajoke;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
+import android.support.test.espresso.IdlingResource;
 import android.support.v4.util.Pair;
 
 import com.example.tait.jokeprovider.myApi.MyApi;
@@ -15,8 +18,6 @@ import com.taitsmith.joketeller.JokeTeller;
 
 import java.io.IOException;
 
-import static com.taitsmith.lifesajoke.paid.MainActivity.idlingResource;
-
 /**
  * Beep beep gettin' jokes from the GCE.
  */
@@ -25,6 +26,15 @@ public class EndpointsJokeRetriever extends AsyncTask<Pair<Context, String>, Voi
     private MyApi myApiService = null;
     private Context context;
     @VisibleForTesting public static String joke;
+
+    @VisibleForTesting
+    @Nullable public static
+    SimpleIdlingResource idlingResource;
+
+    @Override
+    protected void onPreExecute() {
+        getIdlingResource();
+    }
 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
@@ -58,5 +68,16 @@ public class EndpointsJokeRetriever extends AsyncTask<Pair<Context, String>, Voi
         intent.putExtra("JOKE", result);
         context.startActivity(intent);
         idlingResource.setIdleState(true);
+    }
+
+
+
+    @VisibleForTesting
+    @NonNull
+    public static IdlingResource getIdlingResource() {
+        if (idlingResource == null) {
+            idlingResource = new SimpleIdlingResource();
+        }
+        return idlingResource;
     }
 }

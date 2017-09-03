@@ -36,7 +36,7 @@ public class AsyncJokeRetrieverTest {
 
     @Before
     public void registerIdlingResource() {
-        idlingResource = activityTestRule.getActivity().getIdlingResource();
+        idlingResource = EndpointsJokeRetriever.getIdlingResource();
         Espresso.registerIdlingResources(idlingResource);
     }
 

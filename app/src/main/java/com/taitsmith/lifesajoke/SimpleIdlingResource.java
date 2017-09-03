@@ -5,7 +5,10 @@ import android.support.test.espresso.IdlingResource;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class SimpleIdlingResource implements IdlingResource {
+/**
+ * Idling resource for use in espresso testing async task. The usual.
+ */
+class SimpleIdlingResource implements IdlingResource {
 
     @Nullable private volatile ResourceCallback callback;
 
@@ -26,7 +29,7 @@ public class SimpleIdlingResource implements IdlingResource {
         return this.getClass().getName();
     }
 
-    public void setIdleState(boolean isIdleNow) {
+    void setIdleState(boolean isIdleNow) {
         this.isIdleNow.set(isIdleNow);
         if (isIdleNow && callback != null) {
             callback.onTransitionToIdle();

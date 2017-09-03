@@ -3,4 +3,5 @@
     <string name="greeting">This version of Life\'s a Joke is supported by ads.</string>
     <string name="out_of_jokes">Oh no! You\'re out of joke credits. Use the button to buy credits for
         more jokes.</string>
+    <string name="buy_jokes">Buy more jokes</string>
 </resources>

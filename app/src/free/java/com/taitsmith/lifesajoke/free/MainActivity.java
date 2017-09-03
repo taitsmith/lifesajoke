@@ -66,11 +66,8 @@ public class MainActivity extends AppCompatActivity {
         int jokesRemaining;
         editor = preferences.edit();
 
-        if (preferences.contains("JOKES_REMAINING")) {
-            jokesRemaining = preferences.getInt("JOKES_REMAINING", 0);
-        } else {
-            jokesRemaining = 6;
-        }
+        jokesRemaining = preferences.contains("JOKES_REMAINING") ?
+                preferences.getInt("JOKES_REMAINING", 0) : 6;
 
         editor.putInt("JOKES_REMAINING", jokesRemaining - 1);
         editor.apply();
@@ -99,11 +96,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showLoading(boolean show) {
-        if (show) {
-            progressBar.setVisibility(View.VISIBLE);
-        } else {
-            progressBar.setVisibility(View.INVISIBLE);
-        }
+        progressBar.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
+
     }
 
     @Override
