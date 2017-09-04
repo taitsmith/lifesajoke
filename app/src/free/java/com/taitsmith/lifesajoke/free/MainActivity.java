@@ -1,16 +1,13 @@
 package com.taitsmith.lifesajoke.free;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.JokeCreator;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.taitsmith.lifesajoke.EndpointsJokeRetriever;
@@ -32,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
-    public JokeCreator creator;
     public SharedPreferences preferences;
     public SharedPreferences.Editor editor;
 
@@ -41,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        creator = new JokeCreator();
         preferences = getSharedPreferences("SHARED_PREFS", 0);
 
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -55,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke() {
         if (getJokeCount() > 0) {
             showLoading(true);
-            new EndpointsJokeRetriever().execute(new Pair<Context, String>(this, creator.getJoke()));
+            new EndpointsJokeRetriever().execute(this);
         } else {
             showOutOfJokes(true);
         }

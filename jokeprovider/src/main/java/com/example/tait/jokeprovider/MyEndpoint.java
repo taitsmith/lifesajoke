@@ -6,11 +6,10 @@
 
 package com.example.tait.jokeprovider;
 
+import com.example.JokeCreator;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
-
-import javax.inject.Named;
 
 /**
  * An endpoint class we are exposing
@@ -25,12 +24,14 @@ import javax.inject.Named;
         )
 )
 public class MyEndpoint {
+    private JokeCreator creator;
 
     //gets a joke and tells it to you.
     @ApiMethod(name = "tellJoke")
-    public MyBean tellJoke(@Named("joke") String joke) {
+    public MyBean tellJoke() {
+        creator = new JokeCreator();
         MyBean response = new MyBean();
-        response.setData(joke);
+        response.setData(creator.getJoke());
         return response;
     }
 }

@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
 import android.support.test.espresso.IdlingResource;
-import android.support.v4.util.Pair;
 
 import com.example.tait.jokeprovider.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -22,13 +21,13 @@ import java.io.IOException;
  * Beep beep gettin' jokes from the GCE.
  */
 
-public class EndpointsJokeRetriever extends AsyncTask<Pair<Context, String>, Void, String> {
+public class EndpointsJokeRetriever extends AsyncTask<Context, Void, String> {
     private MyApi myApiService = null;
     private Context context;
     @VisibleForTesting public static String joke;
 
     @VisibleForTesting
-    @Nullable public static
+    @Nullable private static
     SimpleIdlingResource idlingResource;
 
     @Override
@@ -37,7 +36,7 @@ public class EndpointsJokeRetriever extends AsyncTask<Pair<Context, String>, Voi
     }
 
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected String doInBackground(Context... params) {
         if (myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -51,11 +50,10 @@ public class EndpointsJokeRetriever extends AsyncTask<Pair<Context, String>, Voi
             myApiService = builder.build();
         }
 
-        context = params[0].first;
-        String joke = params[0].second;
+        context = params[0];
 
         try {
-            return myApiService.tellJoke(joke).execute().getData();
+            return myApiService.tellJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -69,8 +67,6 @@ public class EndpointsJokeRetriever extends AsyncTask<Pair<Context, String>, Voi
         context.startActivity(intent);
         idlingResource.setIdleState(true);
     }
-
-
 
     @VisibleForTesting
     @NonNull

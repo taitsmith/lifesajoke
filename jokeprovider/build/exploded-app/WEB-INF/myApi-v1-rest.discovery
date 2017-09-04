@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/tfQEQ0OaRzARDkVQuVnC3xkHUb8\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/GBYQwfZeyZBuX5EHkGPaJPXfrZU\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -13,10 +13,10 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rest",
- "baseUrl": "https://myApplicationId.appspot.com/_ah/api/myApi/v1/tellJoke/",
- "basePath": "/_ah/api/myApi/v1/tellJoke/",
+ "baseUrl": "https://myApplicationId.appspot.com/_ah/api/myApi/v1/",
+ "basePath": "/_ah/api/myApi/v1/",
  "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
- "servicePath": "myApi/v1/tellJoke/",
+ "servicePath": "myApi/v1/",
  "batchPath": "batch",
  "parameters": {
   "alt": {
@@ -86,18 +86,8 @@
  "methods": {
   "tellJoke": {
    "id": "myApi.tellJoke",
-   "path": "{joke}",
+   "path": "tellJoke",
    "httpMethod": "POST",
-   "parameters": {
-    "joke": {
-     "type": "string",
-     "required": true,
-     "location": "path"
-    }
-   },
-   "parameterOrder": [
-    "joke"
-   ],
    "response": {
     "$ref": "MyBean"
    },

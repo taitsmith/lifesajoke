@@ -1,14 +1,11 @@
 package com.taitsmith.lifesajoke.paid;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import com.example.JokeCreator;
 import com.taitsmith.lifesajoke.EndpointsJokeRetriever;
 import com.taitsmith.lifesajoke.R;
 
@@ -22,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
-    JokeCreator creator;
+//    JokeCreator creator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        creator = new JokeCreator();
+//        creator = new JokeCreator();
      }
 
     //button calls asyc task to talk to GCE server and get jokes
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.jokeButton)
     public void tellJoke() {
         showLoading(true);
-        new EndpointsJokeRetriever().execute(new Pair<Context, String>(this, creator.getJoke()));
+        new EndpointsJokeRetriever().execute(this);
     }
 
     public void showLoading(boolean show) {

@@ -37,7 +37,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile project(':jokecreator')
     compile project(':joketeller')
     compile project(path: ':jokeprovider', configuration: 'android-endpoints')
 
